@@ -31,8 +31,10 @@ const oklchToHex = (str) => {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://fuwari.vercel.app/",
-  base: "/",
+  // site: "https://fuwari.vercel.app/",
+  // base: "/",
+  site: "https://buglzl.github.io",
+  base: "eureka-blog",
   trailingSlash: "always",
   integrations: [
     tailwind(),
