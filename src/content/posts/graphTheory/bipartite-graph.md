@@ -2,9 +2,9 @@
 title: 二分图
 published: 2024-04-05
 description: '关于二分图知识与代码模板总结'
-image: '../guide/cover.jpeg'
+image: '../images/euler.jpeg'
 tags: [总结, 图论, 二分图]
-category: 'graphTheory'
+category: '图论'
 draft: false 
 ---
 

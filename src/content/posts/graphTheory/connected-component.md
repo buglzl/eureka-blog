@@ -2,9 +2,9 @@
 title: 连通分量
 published: 2024-04-11
 description: '关于图论中连通分量知识与代码模板总结'
-image: '../guide/cover.jpeg'
+image: '../images/euler.jpeg'
 tags: [总结, 图论, 强连通分量, 双连通分量]
-category: 'graphTheory'
+category: '图论'
 draft: false 
 ---
 

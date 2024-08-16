@@ -4,7 +4,7 @@ published: 2024-04-09
 description: '关于组合数学的各种总结'
 image: '../guide/cover.jpeg'
 tags: [总结, 数学, 组合数学]
-category: 'mathematical'
+category: '数学'
 draft: false 
 ---
 

@@ -4,7 +4,7 @@ published: 2023-10-23
 description: '关于数论知识和线性代数知识与代码模板总结'
 image: '../guide/cover.jpeg'
 tags: [总结, 数学, 数论, 线性代数]
-category: 'mathematical'
+category: '数学'
 draft: false 
 ---
 
