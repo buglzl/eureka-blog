@@ -34,7 +34,7 @@ export default defineConfig({
   // site: "https://fuwari.vercel.app/",
   // base: "/",
   site: "https://buglzl.github.io",
-  base: "/",
+  base: "eureka-blog",
   trailingSlash: "always",
   integrations: [
     tailwind(),
