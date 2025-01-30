@@ -1,7 +1,7 @@
 ---
 title: Java 笔记 (chapter 01)
 published: 2025-01-26
-description: 'Java基础系列 个人整理笔记 方便个人回忆知识点'
+description: 'Java基础系列 个人整理笔记 方便个人回忆知识点 该章节涉及Java历史，Java中jdk，jre和jvm的关系，Java变量，Java数据类型和类型转换'
 image: './img/java.png'
 tags: [Java]
 category: '工程'
