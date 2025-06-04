@@ -26,6 +26,14 @@ Java me(Micro Edition)   $\ \ \ $  小型版  $\ \ \ $ 基本不用
 - 跨平台
 - 解释性语言(也有 jvm 中热点代码先编译再执行)
 
+:::tip
+* Java 的安全性、健壮性和严谨性是强类型语言的一重要体现；
+* Java的强类型语言对数据类型兼容性的要求比任何语言都要严格；
+* 每个变量有类型，每个表达式有类型，而且每种类型是严格定义的。其次，所有的数值传递，不管是直接的还是通过方法调用经由参数传过去的都要先进行类型相容性的检查；
+* Java 编译器对所有的表达式和参数都要进行类型相容性的检查以保证类型是兼容的。任何类型的不匹配都是错误的，在编译器完成编译以前，错误必须被改正；
+* 初期你可能发现 Java 的强制类型检查有点繁烦。但是要记住，从长远来说它将帮助你减少程序出错的可能性。
+:::
+
 > 解释性语言 js,Java <br>
 > 编译性语言 c c++ <br>
 
@@ -36,28 +44,28 @@ Java me(Micro Edition)   $\ \ \ $  小型版  $\ \ \ $ 基本不用
 
 # JVM & JDK & JRE 之间的关系
 
-## JVM(Java virtual machine)
+## JVM(Java Virtual Machine)
 
-- jvm   虚拟计算机，具有指令集并使用不同的存储区域，复制执行指令，管理数据，内存，寄存器，包含在jdk当中
+- JVM   虚拟计算机，具有指令集并使用不同的存储区域，复制执行指令，管理数据，内存，寄存器，包含在JDK当中
 - 不同的平台，有不同的虚拟机
 - Java虚拟机 机制屏蔽了底层运行平台的差异，实现一次编译，到处运行
 
-## JDK(Java development kit)
+## JRE介绍
 
-- jdk Java开发工具包
-- jdk = jre + Java的开发工具(Java Javac Javadoc Javap等)
+- JRE(Java runtime environment      Java运行环境)
+- JRE=JVM + Java核心类库
+- JRE包含 JVM 和 Java 程序所需要的核心类库
 
-## jre介绍
+## JDK(Java Development Kit)
 
-- jre(Java runtime environment      Java运行环境)
-- jre=jvm + Java核心类库
-- jre包含 jvm 和 Java 程序所需要的核心类库
+- JDK —— Java开发工具包
+- JDK = JRE + Java的开发工具(Java Javac Javadoc Javap等)
 
 ## 小结
 
-jdk= jre + Java开发工具<br>
-jre = jvm+Java核心类库<br>
-jdk = jre ( jvm + 核心类库 ) + Java开发工具
+JDK= JRE + Java开发工具<br>
+JRE = JVM+Java核心类库<br>
+JDK = JRE ( JVM + 核心类库 ) + Java开发工具
 
 
 # Java执行流程
@@ -66,13 +74,13 @@ jdk = jre ( jvm + 核心类库 ) + Java开发工具
 
 javac编译 
 
-Java装载到jvm执行
+Java装载到JVM执行
 
 # Java开发细节
 
-一个Java源文件可以有多个class类,但最多一个public类<br>
-一个源文件最多一个public类，其他类不限，可以将main方法写在非public类当中,
-然后指定运行非public类，这样入口方法就是非public的main方法
+一个Java源文件**可以有多个class类,但最多一个public类**<br>
+一个源文件最多一个public类，其他类不限，**可以将main方法写在非public类当中**,
+然后**指定运行非public类，这样入口方法就是非public的main方法**
 
 ```java
 public class HelloWorld {
@@ -148,7 +156,9 @@ class cat {
 回车和换行的区别：回车是把当前光标放到目前的第一行
 
 ```java
-System.out.println("hhhhh\rxxx"); // 输出 xxxhh
+// 传统编译运行在终端中输出 xxxhh
+// 在IDEA中输出xxx
+System.out.println("hhhhh\rxxx"); 
 ```
 
 ---
@@ -193,10 +203,10 @@ public class demo2_ChangeChar {
 :::
 
 javadoc -d d://temp -xx -yy 当前java源文件<br>
-xx yy 指的是使用到的标签， 即 author version 等
+xx yy 指的是使用到的标签， 即 `author` 和 `version` 等
 
-**更多的一定要看 javadoc 相关文档**
-
+**更多的一定要看以下 javadoc 相关文档**
+> https://www.cnblogs.com/linj7/p/14339381.html
 
 
 ## java 规范
@@ -229,12 +239,12 @@ move
 [dir] 表示文件目录
 :::
 
-## 变量
+## ⭐变量
 
 变量是程序的基本组成单位
 
-类型  名称  值<br>
-int a=1;
+>类型  名称   &nbsp; = 值<br>
+int &nbsp; &nbsp; &nbsp; a &nbsp; &nbsp;  = &nbsp; 1;
 
 不同的类型占用不同的空间大小 8bit=1byte
 
@@ -242,10 +252,10 @@ int a=1;
 
 变量=变量名+值+数据类型
 
-#### +号的使用
+### +号的使用
 
 1. 加号左右两边都是数值时，做加法运算
-2. 加号左右两边有一方是字符串时，做拼接运算
+2. 加号左右**两边有一方是字符串时，做拼接运算**
 
 ```java
 public class demo3_var3 {
@@ -280,7 +290,9 @@ public class demo3_var3 {
 
 引用数据类型包括 1class类,2interface接口,3[]数组
 
+:::note
 浮点默认double，要float后面需要加 f
+:::
 
 ### 整型细节
 
@@ -298,18 +310,20 @@ float num = 1.1; // 错误，得 1.1f
 
 浮点数表示：0.512, .512,  512.0f （十进制数形式）5.12e2（科学计数法）
 
-推荐有限使用 double，精度更高
+推荐使用 double，精度更高
 
-浮点数陷阱，进行判断时要小心
+浮点数陷阱，进行大小判断时要小心
 
 ```java
 double a = 2.7;
-double b = 8.1 / 3; // b != 2.7
+double b = 8.1 / 3;
+ // b != 2.7  ×
+ // Math.fabs(b - 2.7) < eps √
 ```
 
-### Java API文档
-
-https://www.matools.com/api/java8
+:::note
+Java API文档：https://www.matools.com/api/java8
+:::
 
 ### char 细节
 
@@ -317,25 +331,25 @@ https://www.matools.com/api/java8
 char c = 97; // 字符类型可以直接存放一个数字
 ```
 
-编码：Unicode（固定两个字节）, ASCII（一个字节）, utf-8（字母1字节，汉字3字节）, GBK（字母1字节，汉字2字节）, gb2312(gb2312<gbk), big5 (繁体中文，台湾，香港)
+编码：Unicode（固定两个字节）, ASCII（一个字节）, utf-8（字母1字节，汉字3字节）, GBK（字母1字节，汉字2字节）, gb2312(gb2312<GBK), big5 (繁体中文，台湾，香港)
 
 :::important
-接下来这块非常重要，基本数据类型转换和强制类型转换的规则相当重要
+接下来这块非常重要，基本数据类型转换和强制类型转换的规则要熟悉
 :::
 
-### 基本数据类型转换
+### ⭐基本数据类型转换
 
 **在java当中 随机一个整数默认int,随机一个小数默认double**<br>
 精度小的类型可以自动转换为精度大的类型<br>
 char-->int-->long-->float-->double<br>
 byte-->short-->int-->long-->float-->double<br>
 
-- 有多种数据类型混合运算时,系统将自动将所有数据转换为容量最大的数据类型,再计算
-- 当将精度大的数据赋值给精度小的数据类型时,会报错,反之会自动转换
+- 有多种数据类型混合运算时,系统将自动将所有数据转换为精度最大的数据类型,再计算
+- **当将精度大的数据赋值给精度小的数据类型时,会报错**,反之会自动转换
 - (byte,short)和char之间不会相互自动转换 
-- byte,short,char 三者之间可以计算,在计算时首先转换为int类型
+- **byte,short,char 三者之间可以计算,在计算时首先转换为int类型**
 - boolean不参与转换
-- 自动提升原则:表达式的结果自动提升为操作数当中最大的类型
+- 自动提升原则:表达式的结果自动提升为操作数当中最大的类型（和第一条意思差不多）
 
 ```java
 byte b = 10;
@@ -355,7 +369,9 @@ double num300 = 1.1;
 double num500 = b4 + s3 + num200 + num300 // double 类型
 ```
 
-
+:::important
+此处知识点很好地体现了Java为何为强类型机制，因为这些类型一旦不对，就会报错
+:::
 
 ### 强制类型转换
 
@@ -378,10 +394,15 @@ b = -48
 - 强转符合只针对最近的操作数有效,小括号可提高优先级
 - char可以保存int的常量值,但不能保存int的变量值,需要强转
 - byte和short类型在运算时,当作int类型处理
+- byte 和 short 只能保存它们类型范围内常量值
+
+:::note
+关于上述第三点：`char c = 90` 可以，但是 `int a = 90; char c = a;` 不可
+:::
 
 ```java
 short s = 12; // ok
-s = s - 9; // error  int -> short
+s = s - 9; // error  int -> short 但是 s -= 9 是正确的
 byte b = 10; // ok
 b = b + 11; // error int->byte
 b = (byte)(b + 11); // ok
@@ -402,8 +423,8 @@ short t = s + b; // error int -> short
   调用parseXXX方法
 
 :::tip
-事实上还有更多
+事实上还有更多互相转换的方法
 :::
 
 
-> 第一章暂时讲到这，这章重点只有变量类型这块
+> 第一章暂时讲到这，这章重点为变量类型这块
