@@ -1,0 +1,174 @@
+
+> fuwari@0.0.1 build E:\Blog\eureka-blog
+> astro build && pagefind --site dist
+
+21:58:50 [content] Syncing content
+21:58:50 [content] Synced content
+21:58:50 [types] Generated 667ms
+21:58:50 [build] output: "static"
+21:58:50 [build] mode: "static"
+21:58:50 [build] directory: E:\Blog\eureka-blog\dist\
+21:58:50 [build] Collecting build info...
+21:58:50 [build] ✓ Completed in 926ms.
+21:58:50 [build] Building static entrypoints...
+Browserslist: browsers data (caniuse-lite) is 19 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "（" used in math mode [unicodeTextInMathMode]
+LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "的" used in math mode [unicodeTextInMathMode]
+LaTeX-incompatible input and strict mode is set to 'warn': In LaTeX, \\ or \newline does nothing in display mode [newLineInDisplayMode]
+LaTeX-incompatible input and strict mode is set to 'warn': In LaTeX, \\ or \newline does nothing in display mode [newLineInDisplayMode]
+LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "，" used in math mode [unicodeTextInMathMode]
+21:58:58 [vite] [32m✓ built in 7.84s[39m
+21:58:58 [build] ✓ Completed in 7.91s.
+
+ building client (vite) 
+21:58:58 [vite] transforming...
+21:58:59 [vite] [32m✓[39m 161 modules transformed.
+21:58:59 [vite] rendering chunks...
+21:58:59 [vite] computing gzip size...
+21:58:59 [vite] [2mdist/[22m[32m_astro/ec.g1fg5.js                                              [39m[1m[2m 0.94 kB[22m[1m[22m
+21:58:59 [vite] [2mdist/[22m[35m_astro/Layout.DSulWsr7.css                                      [39m[1m[2m 4.42 kB[22m[1m[22m[2m │ gzip:  1.43 kB[22m
+21:58:59 [vite] [2mdist/[22m[35m_astro/Layout.y4KPJ9hc.css                                      [39m[1m[2m14.04 kB[22m[1m[22m[2m │ gzip:  2.61 kB[22m
+21:58:59 [vite] [2mdist/[22m[35m_astro/ec.4fsv9.css                                             [39m[1m[2m19.69 kB[22m[1m[22m[2m │ gzip:  4.40 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/url-utils.CDKlk1d5.js                                    [39m[1m[2m 0.30 kB[22m[1m[22m[2m │ gzip:  0.21 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/input.cX-djaPf.js                                        [39m[1m[2m 0.75 kB[22m[1m[22m[2m │ gzip:  0.43 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/setting-utils.y95V84-6.js                                [39m[1m[2m 1.01 kB[22m[1m[22m[2m │ gzip:  0.50 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/SwupScriptsPlugin.DeeT9ppa.js                            [39m[1m[2m 1.10 kB[22m[1m[22m[2m │ gzip:  0.62 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/preload-helper.BlTxHScW.js                               [39m[1m[2m 1.11 kB[22m[1m[22m[2m │ gzip:  0.65 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/client.svelte.BtEbdPyR.js                                [39m[1m[2m 1.13 kB[22m[1m[22m[2m │ gzip:  0.63 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/index.modern.D46RI4Wq.js                                 [39m[1m[2m 1.77 kB[22m[1m[22m[2m │ gzip:  0.91 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/page.Z8IJTFqj.js                                         [39m[1m[2m 2.15 kB[22m[1m[22m[2m │ gzip:  1.01 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/DisplaySettings.CcQr5-8Z.js                              [39m[1m[2m 2.16 kB[22m[1m[22m[2m │ gzip:  1.17 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/SwupHeadPlugin.DvOZNxAa.js                               [39m[1m[2m 2.58 kB[22m[1m[22m[2m │ gzip:  1.28 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/LightDarkSwitch.BSapTNdP.js                              [39m[1m[2m 3.33 kB[22m[1m[22m[2m │ gzip:  1.38 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/ArchivePanel.BAGGqS3v.js                                 [39m[1m[2m 3.61 kB[22m[1m[22m[2m │ gzip:  1.59 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/each.DDW9_lxA.js                                         [39m[1m[2m 3.75 kB[22m[1m[22m[2m │ gzip:  1.88 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/Search.Dyki_PZ4.js                                       [39m[1m[2m 4.66 kB[22m[1m[22m[2m │ gzip:  2.05 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/SwupA11yPlugin.BIyElFLX.js                               [39m[1m[2m 5.25 kB[22m[1m[22m[2m │ gzip:  2.12 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/SwupPreloadPlugin.BFr0xV-N.js                            [39m[1m[2m 6.06 kB[22m[1m[22m[2m │ gzip:  2.35 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/zh_TW.EWYoPUR2.js                                        [39m[1m[2m 7.50 kB[22m[1m[22m[2m │ gzip:  2.59 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/SwupScrollPlugin.DTcbGiCQ.js                             [39m[1m[2m 8.00 kB[22m[1m[22m[2m │ gzip:  2.40 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/translation.GnmvukOK.js                                  [39m[1m[2m 9.60 kB[22m[1m[22m[2m │ gzip:  4.43 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/Layout.astro_astro_type_script_index_0_lang.DAHrxWCB.js  [39m[1m[2m16.69 kB[22m[1m[22m[2m │ gzip:  5.41 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/Icon.D22Vt4DZ.js                                         [39m[1m[2m20.41 kB[22m[1m[22m[2m │ gzip:  8.23 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/Swup.BWOMRtvc.js                                         [39m[1m[2m21.62 kB[22m[1m[22m[2m │ gzip:  7.41 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/render.BTYFdy85.js                                       [39m[1m[2m27.51 kB[22m[1m[22m[2m │ gzip: 10.89 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/Layout.astro_astro_type_script_index_1_lang.DlBknloJ.js  [39m[1m[2m31.78 kB[22m[1m[22m[2m │ gzip: 15.34 kB[22m
+21:58:59 [vite] [2mdist/[22m[36m_astro/photoswipe.esm.CKV1Bsxh.js                               [39m[1m[2m60.41 kB[22m[1m[22m[2m │ gzip: 17.48 kB[22m
+21:58:59 [vite] [32m✓ built in 934ms[39m
+
+ generating static routes 
+21:58:59 ▶ src/pages/about.astro
+21:58:59   └─ /about/index.html (+56ms) 
+21:58:59 ▶ src/pages/archive.astro
+21:58:59   └─ /archive/index.html (+8ms) 
+21:58:59 ▶ src/pages/posts/[...slug].astro
+21:58:59   ├─ /posts/engineering/java/chapter2/index.html (+8ms) 
+21:58:59   ├─ /posts/engineering/java/chapter1/index.html (+6ms) 
+21:58:59   ├─ /posts/leetcode/the144thdoubleweekcontestandthe245thweekcontest/index.html (+8ms) 
+21:58:59   ├─ /posts/engineering/mybatis/mybatisnote/index.html (+15ms) 
+21:58:59   ├─ /posts/面试/云智研发笔试/index.html (+7ms) 
+21:58:59   ├─ /posts/面试/华为笔试/index.html (+6ms) 
+21:58:59   ├─ /posts/面试/深信服笔试/index.html (+9ms) 
+21:59:00   ├─ /posts/eureka/judge_set_and_multiset_equal/index.html (+10ms) 
+21:59:00   ├─ /posts/面试/美团技术第二场/index.html (+12ms) 
+21:59:00   ├─ /posts/graphtheory/与树相关/index.html (+9ms) 
+21:59:00   ├─ /posts/graphtheory/网络流/index.html (+14ms) 
+21:59:00   ├─ /posts/graphtheory/图论小知识点/index.html (+9ms) 
+21:59:00   ├─ /posts/graphtheory/树与图的存储/index.html (+15ms) 
+21:59:00   ├─ /posts/graphtheory/connected-component/index.html (+21ms) 
+21:59:00   ├─ /posts/math/combinatorial-mathematics/index.html (+17ms) 
+21:59:00   ├─ /posts/graphtheory/最近公共祖先/index.html (+15ms) 
+21:59:00   ├─ /posts/graphtheory/bipartite-graph/index.html (+15ms) 
+21:59:00   ├─ /posts/graphtheory/生成树模型/index.html (+10ms) 
+21:59:00   ├─ /posts/graphtheory/最短路模型/index.html (+27ms) 
+21:59:00   └─ /posts/math/math-maththeory/index.html (+14ms) 
+21:59:00 λ src/pages/robots.txt.ts
+21:59:00   └─ /robots.txt (+3ms) 
+21:59:00 λ src/pages/rss.xml.ts
+21:59:00   └─ /rss.xml (+67ms) 
+21:59:00 ▶ src/pages/[...page].astro
+21:59:00   ├─ /index.html (+14ms) 
+21:59:00   ├─ /2/index.html (+8ms) 
+21:59:00   └─ /3/index.html (+6ms) 
+21:59:00 ✓ Completed in 610ms.
+
+ generating optimized images 
+21:59:00   ▶ /_astro/java.VxTpfEp3_1bJPtv.webp (reused cache entry) (+2ms) (1/43)
+21:59:00   ▶ /_astro/demo-avatar.CxcI0ivM_1nbuVe.webp (reused cache entry) (+3ms) (2/43)
+21:59:00   ▶ /_astro/mapper接口和mapper映射文件在同一包下.CmcOYCQz_ZTz0Kg.webp (reused cache entry) (+2ms) (3/43)
+21:59:00   ▶ /_astro/leetcode.BY2X47Ht_1VWINO.webp (reused cache entry) (+2ms) (4/43)
+21:59:00   ▶ /_astro/MyBatis下载.ChHM9SFV_1BpiUo.webp (reused cache entry) (+3ms) (5/43)
+21:59:00   ▶ /_astro/默认的类型别名2.DN4qsk9K_1T7DLs.webp (reused cache entry) (+3ms) (6/43)
+21:59:00   ▶ /_astro/默认的类型别名1.Dun7YYLu_1pHt4S.webp (reused cache entry) (+3ms) (7/43)
+21:59:00   ▶ /_astro/延迟加载测试1.CVlfBfS3_Oa8Hv.webp (reused cache entry) (+3ms) (8/43)
+21:59:00   ▶ /_astro/延迟加载测试2.1UqqLn2a_1U75FT.webp (reused cache entry) (+3ms) (9/43)
+21:59:00   ▶ /_astro/trim测试结果.BiyABkGa_y2VRb.webp (reused cache entry) (+4ms) (10/43)
+21:59:00   ▶ /_astro/延迟加载测试3.DG1M--Z8_1EiJ1f.webp (reused cache entry) (+4ms) (11/43)
+21:59:00   ▶ /_astro/choose测试结果.CkFE147I_Z2a86Bh.webp (reused cache entry) (+4ms) (12/43)
+21:59:00   ▶ /_astro/foreach测试结果1.C6cZ5RWk_1VVkSo.webp (reused cache entry) (+4ms) (13/43)
+21:59:00   ▶ /_astro/dependency中的驱动.DTaHmB2U_Z1lB63c.webp (reused cache entry) (+4ms) (14/43)
+21:59:00   ▶ /_astro/foreach测试结果2.ChLdUchp_YymyO.webp (reused cache entry) (+4ms) (15/43)
+21:59:00   ▶ /_astro/执行MBG插件的generate目标.D-z4CkdD_gmRna.webp (reused cache entry) (+4ms) (16/43)
+21:59:00   ▶ /_astro/插件中的驱动.DENBUOFe_Z2berAk.webp (reused cache entry) (+2ms) (17/43)
+21:59:00   ▶ /_astro/逆向执行结果.DbvQkxNC_Z1WJUjN.webp (reused cache entry) (+2ms) (18/43)
+21:59:00   ▶ /_astro/example的方法.Cgc_iy9a_3vg9t.webp (reused cache entry) (+2ms) (19/43)
+21:59:00   ▶ /_astro/example测试结果.DuI5kOuH_ZNGpGx.webp (reused cache entry) (+2ms) (20/43)
+21:59:00   ▶ /_astro/增删改测试结果2.BAxyYS-__Z1Y9hil.webp (reused cache entry) (+2ms) (21/43)
+21:59:00   ▶ /_astro/增删改测试结果1.C7CBFawk_Z14TtnF.webp (reused cache entry) (+2ms) (22/43)
+21:59:00   ▶ /_astro/分页测试结果.lx6oyoqm_Zw5pxE.webp (reused cache entry) (+2ms) (23/43)
+21:59:00   ▶ /_astro/配置分页插件.BRuGVC7a_Z1i3eRY.webp (reused cache entry) (+3ms) (24/43)
+21:59:00   ▶ /_astro/engineering.zIB1e6Qr_ZfU4jl.webp (reused cache entry) (+3ms) (25/43)
+21:59:00   ▶ /_astro/云智研发.BvGirpXc_Z22u7z3.webp (reused cache entry) (+3ms) (26/43)
+21:59:00   ▶ /_astro/华为.DjGTwRHR_ltfax.webp (reused cache entry) (+3ms) (27/43)
+21:59:00   ▶ /_astro/eureka.CNl9yjpZ_2tUT1P.webp (reused cache entry) (+3ms) (28/43)
+21:59:00   ▶ /_astro/深信服.CuSh7DaY_1JRK6C.webp (reused cache entry) (+4ms) (29/43)
+21:59:00   ▶ /_astro/美团.CWyHf2l3_2bd6nB.webp (reused cache entry) (+4ms) (30/43)
+21:59:00   ▶ /_astro/最大流.CmE-z6aK_1Ckcbe.webp (reused cache entry) (+4ms) (31/43)
+21:59:00   ▶ /_astro/euler.BJ_jyY9t_Z1LlnxL.webp (reused cache entry) (+5ms) (32/43)
+21:59:00   ▶ /_astro/割.ny-p6H88_14FkKW.webp (reused cache entry) (+2ms) (33/43)
+21:59:00   ▶ /_astro/上下界可行流.DbCdKGVD_1jVzok.webp (reused cache entry) (+2ms) (34/43)
+21:59:00   ▶ /_astro/闭合子图.BZ-Tjfxu_Z1AwBc5.webp (reused cache entry) (+2ms) (35/43)
+21:59:00   ▶ /_astro/最大流最小割证明.Dgvj7n2y_Z2jy9dw.webp (reused cache entry) (+2ms) (36/43)
+21:59:00   ▶ /_astro/闭合子图之流网络.CJl6_1Kg_Z1eAB9W.webp (reused cache entry) (+2ms) (37/43)
+21:59:00   ▶ /_astro/Euler_path.BmwaTJzc_ZgNayK.webp (reused cache entry) (+2ms) (38/43)
+21:59:00   ▶ /_astro/scc_case1.DCSMFZxC_2uqOKz.webp (reused cache entry) (+2ms) (39/43)
+21:59:00   ▶ /_astro/SCC.CPi9gycF_18q66e.webp (reused cache entry) (+3ms) (40/43)
+21:59:00   ▶ /_astro/cover.CgGywNHJ_9MQNr.webp (reused cache entry) (+3ms) (41/43)
+21:59:00   ▶ /_astro/最短路数量.SdDMUKWj_2baCGD.webp (reused cache entry) (+3ms) (42/43)
+21:59:00   ▶ /_astro/tarjan求lca.T0mlqReN_zHbxj.webp (reused cache entry) (+3ms) (43/43)
+21:59:00 ✓ Completed in 15ms.
+
+21:59:00 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+21:59:00 [build] 25 page(s) built in 10.53s
+21:59:00 [build] Complete!
+
+Running Pagefind v1.4.0 (Extended)
+Running from: "E:\\Blog\\eureka-blog"
+Source:       "dist"
+Output:       "dist\\pagefind"
+
+[Walking source directory]
+Found 25 files matching **/*.{html}
+
+[Parsing files]
+Found a data-pagefind-body element on the site.
+↳ Ignoring pages without this tag.
+
+[Reading languages]
+Discovered 1 language: zh-cn
+
+[Building search indexes]
+Total: 
+  Indexed 1 language
+  Indexed 21 pages
+  Indexed 3118 words
+  Indexed 0 filters
+  Indexed 0 sorts
+Note: Pagefind doesn't support stemming for the language zh-cn. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn't support stemming for the language zh-cn. 
+Search will still work, but will not match across root words.
+
+Finished in 0.480 seconds
