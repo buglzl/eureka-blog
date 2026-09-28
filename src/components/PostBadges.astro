@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon/components";
+import { postCardConfig } from "@/config";
+import { isRecentPost } from "../utils/content-utils";
+
+interface Props {
+	pinned?: boolean;
+	published: Date;
+}
+
+const { pinned = false, published } = Astro.props;
+const isNew = isRecentPost(published);
+---
+
+{(pinned || isNew) && (
+	<div class="flex items-center gap-1.5 -mt-1.5 mb-3">
+		{pinned && (
+			<span
+				class="inline-flex items-center gap-1 rounded-md bg-[var(--primary)] text-white
+				text-xs font-bold px-2 py-0.5 select-none"
+			>
+				<Icon name="material-symbols:push_pin" class="text-sm"></Icon>
+				{postCardConfig.pinLabel}
+			</span>
+		)}
+		{isNew && (
+			<span
+				class="inline-flex items-center rounded-md bg-emerald-500 text-white
+				text-xs font-bold px-2 py-0.5 select-none"
+			>
+				NEW
+			</span>
+		)}
+	</div>
+)}

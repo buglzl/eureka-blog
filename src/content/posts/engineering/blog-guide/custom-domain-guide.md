@@ -6,6 +6,7 @@ image: '../../images/blog-guide.webp'
 tags: [博客, GitHub Pages, 域名, Cloudflare, HTTPS, SEO]
 category: '工程'
 draft: true
+pinned: true
 ---
 
 > **一句话结论：花 38 块钱买一年域名，按本文 6 个步骤操作，1 小时内你的博客就能从 `xxx.github.io` 变成 `你自己的域名.com`，带 HTTPS 小锁，Google 可以搜到。不买服务器，不需要备案。**
