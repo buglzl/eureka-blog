@@ -2,7 +2,7 @@
 title: 自定义域名上线个人博客：照抄就能成功的全流程
 published: 2026-09-28
 description: 从买域名到 HTTPS 亮锁、再到被 Google 收录，个人博客绑定自有域名的完整实操记录，每一步都有截图，照着做就行。
-image: '../../images/engineering.webp'
+image: '../../images/blog-guide.webp'
 tags: [博客, GitHub Pages, 域名, Cloudflare, HTTPS, SEO]
 category: '工程'
 draft: true

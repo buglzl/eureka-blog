@@ -2,7 +2,7 @@
 title: 个人博客绑定域名的原理：DNS、Cloudflare、HTTPS 一次讲清
 published: 2026-09-28
 description: 为什么 GitHub 签不出 HTTPS 证书？为什么换 Cloudflare 就好了？爬虫怎么找到你的网站？用大白话讲清楚域名背后的计算机网络知识。
-image: '../../images/engineering.webp'
+image: '../../images/blog-guide.webp'
 tags: [DNS, Cloudflare, HTTPS, 计算机网络, 博客, 原理]
 category: '工程'
 draft: true
