@@ -2,6 +2,7 @@ import type {
 	ExpressiveCodeConfig,
 	LicenseConfig,
 	NavBarConfig,
+	PostCardConfig,
 	ProfileConfig,
 	SiteConfig,
 } from "./types/config";
@@ -63,6 +64,11 @@ export const licenseConfig: LicenseConfig = {
 	enable: false,
 	name: "CC BY-NC-SA 4.0",
 	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+};
+
+export const postCardConfig: PostCardConfig = {
+	newBadgeDays: 14,
+	pinLabel: "置顶",
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {

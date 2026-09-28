@@ -100,3 +100,10 @@ export type BlogPostData = {
 export type ExpressiveCodeConfig = {
 	theme: string;
 };
+
+export type PostCardConfig = {
+	/** Number of days a post is considered new and shows the NEW badge */
+	newBadgeDays: number;
+	/** Label displayed on the pinned badge */
+	pinLabel: string;
+};

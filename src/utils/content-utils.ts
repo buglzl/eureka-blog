@@ -2,6 +2,19 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import { getCategoryUrl } from "@utils/url-utils.ts";
+import { postCardConfig } from "@/config";
+
+function comparePosts(
+	a: CollectionEntry<"posts">,
+	b: CollectionEntry<"posts">,
+) {
+	if (a.data.pinned !== b.data.pinned) {
+		return a.data.pinned ? -1 : 1;
+	}
+	const dateA = new Date(a.data.published);
+	const dateB = new Date(b.data.published);
+	return dateA > dateB ? -1 : 1;
+}
 
 // // Retrieve posts and sort them by publication date
 async function getRawSortedPosts() {
@@ -9,11 +22,7 @@ async function getRawSortedPosts() {
 		return import.meta.env.PROD ? data.draft !== true : true;
 	});
 
-	const sorted = allBlogPosts.sort((a, b) => {
-		const dateA = new Date(a.data.published);
-		const dateB = new Date(b.data.published);
-		return dateA > dateB ? -1 : 1;
-	});
+	const sorted = allBlogPosts.sort(comparePosts);
 	return sorted;
 }
 
@@ -45,6 +54,11 @@ export async function getSortedPostsList(): Promise<PostForList[]> {
 	}));
 
 	return sortedPostsList;
+}
+
+export function isRecentPost(published: Date): boolean {
+	const ageInDays = (Date.now() - published.getTime()) / 86400000;
+	return ageInDays >= 0 && ageInDays < postCardConfig.newBadgeDays;
 }
 export type Tag = {
 	name: string;
