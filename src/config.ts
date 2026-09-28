@@ -2,6 +2,7 @@ import type {
 	ExpressiveCodeConfig,
 	LicenseConfig,
 	NavBarConfig,
+	PostCardConfig,
 	ProfileConfig,
 	SiteConfig,
 } from "./types/config";
