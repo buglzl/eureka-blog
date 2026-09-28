@@ -2,27 +2,81 @@
 title: 自定义域名上线个人博客：照抄就能成功的全流程
 published: 2026-09-28
 description: 从买域名到 HTTPS 亮锁、再到被 Google 收录，个人博客绑定自有域名的完整实操记录，每一步都有截图，照着做就行。
-image: '../../images/blog-guide.webp'
+image: '../../images/blog-guide-1.webp'
 tags: [博客, GitHub Pages, 域名, Cloudflare, HTTPS, SEO]
 category: '工程'
-draft: true
+draft: false
 pinned: true
 ---
 
+以前想给博客挂上一个自定义域名：大概要花一整天到处搜资料，东拼西凑；运气差一点的，没人传授，根本搞不定。
+
+而现在，把需求交给 AI，一小时内就能上线，甚至更快。不禁感叹：**大人，时代变了。**
+
 > **一句话结论：花 38 块钱买一年域名，按本文 6 个步骤操作，1 小时内你的博客就能从 `xxx.github.io` 变成 `你自己的域名.com`，带 HTTPS 小锁，Google 可以搜到。不买服务器，不需要备案。**
 >
-> 本文是我 2026 年 9 月真实操作一遍的记录，每一步都有截图。原理和名词解释写在[姊妹篇《自定义域名背后的原理》](/posts/engineering/blog-guide/custom-domain-principles/)里，只想照做的不用点开。
+> 本文是我 2026 年 9 月在 AI 协助下真实操作一遍的记录，每一步都有截图。原理和名词解释写在[姊妹篇《自定义域名背后的原理》](/posts/engineering/blog-guide/custom-domain-principles/)里，只想照做的不用点开。
 
-## 你需要准备
+## 开始之前：30 秒把名词说成人话
 
-| 东西 | 说明 |
+把做博客想象成**开店**，本文的名词全部能装进这个画面（老手可快速扫过，小白请细品）：
+
+- **GitHub** —— 一个免费的大型商场，全世界的人都能进来逛。它旗下的 **GitHub Pages** 服务相当于商场宣布：「你可以免费在这里摆摊」。摆了摊，你就有了人生第一个网页，地址是 `你的名字.github.io`。
+- **域名** —— 摊位的**自定义招牌**：`xxx.github.io` 是商场统一发的编号牌，而 `lzleureka.cn` 是你自己做的招牌，好记、体面。**本文要做的，就是换招牌这一件事。**
+
+| 你需要 | 说明 |
 |---|---|
-| 一个能访问的 GitHub Pages 博客 | 本文以 Astro 主题 Fuwari 为例，任何 GitHub Pages 站都适用 |
+| 一个 GitHub 账号 | 没有的话去 [github.com](https://github.com) 注册，免费，1 分钟 |
 | 支付宝或微信 | 买域名用 |
-| 预算 | 域名 ¥38/年（.cn），仅此一项 |
+| 预算 ¥38 左右 | 域名钱，仅此一项，全程不用买服务器 |
 | 一台能上网的电脑 | 全程网页操作，不用写代码 |
 
-**总耗时：操作约 30 分钟 + 等待实名和证书生效（1~3 小时，期间不用盯着）。**
+**总耗时：操作约 30~40 分钟 + 等待实名和证书生效（1~3 小时，期间不用盯着）。**
+
+## 第 0 步（小白专线）：先把摊位摆起来
+
+已经有自己的博客了？直接跳到第 1 步。
+
+还没有的话，跟着做，10 分钟拥有人生第一个网页：
+
+**1. 注册并新建仓库**
+
+打开 [github.com](https://github.com) 注册账号（一个邮箱即可）。登录后点右上角「**+**」→「**New repository**」：
+
+![GitHub 右上角 + 菜单里选 New repository](images/10-github-new-repo-menu.png)
+
+**2. 给仓库取名**
+
+可见范围选 **Public**，点 **Create repository**。但取名前，先记住一条硬性规则：
+
+> [!IMPORTANT]
+> 仓库名必须严格填 `你的用户名.github.io`——例如用户名是 `buglzl`，就填 `buglzl.github.io`。**名字对不上，GitHub 就不会自动把它变成网站**，这是新手最容易踩的坑。
+
+![⚠️ 错误示范：截图里填的 `eureka.github.io` 不满足 `用户名.github.io` 格式，这样 GitHub 不会自动建站。正确填法应该是 `你的用户名.github.io`](images/11-github-repo-form.png)
+
+**3. 建一个首页文件**
+
+创建完成后，在仓库页面点「**creating a new file**」链接：
+
+![空仓库页面，点 creating a new file](images/12-github-empty-repo.png)
+
+文件名填 `index.html`，内容粘贴一行：
+
+```html
+<h1>你好，世界！这是我的第一个网页</h1>
+```
+
+然后点右上角「**Commit changes**」保存：
+
+![文件名 index.html，内容一行 h1，点 Commit changes](images/13-github-index-html.png)
+
+**4. 开张验收**
+
+等 1 分钟，浏览器访问 `https://你的用户名.github.io`，看到那行「你好，世界」就是**摊位开张** 🎉
+
+> 如果访问 404：进仓库的 **Settings → Pages**，确认 Source 选的是 `Deploy from a branch` + `main` 分支，保存后等两分钟再试。
+>
+> 此时你的摊位还是毛坯房，不着急，先换招牌。
 
 ## 第 1 步：阿里云买域名（10 分钟）
 
@@ -33,14 +87,17 @@ pinned: true
 ![阿里云结算页：选信息模板、年限 1 年、不勾任何加购](images/01-aliyun-checkout.png)
 
 - ✅ 年限选 **1 年**
-- ✅ 信息模板选「个人」（没有就现场创建，填身份证信息，几分钟通过）
+- ✅ 信息模板选「个人」（没有就现场创建，填身份证信息）
+
+> [!NOTE]
+> 信息模板要提交身份证实名审核，快则几分钟、慢则 1~3 天——**建议下单前提前创建好**。本文截图里的模板就是提前做好、审核通过后直接选用的。
 - ❌ 「15 元同步开通 AI 建站」等所有加购**一个都不要勾**，右侧服务器、备案服务统统无视——你的网站放在 GitHub（境外），**不需要备案，一分钱都不用多花**
 
 4. 勾上底部「我已阅读并同意域名服务条款」→ 立即购买
 
 ![支付成功页](images/02-aliyun-paid.png)
 
-5. 付款后进入 [域名控制台](https://dc.console.aliyun.com)，等域名状态变成「**已实名**」（一般几分钟到几小时）。**没实名成功之前，后面的解析都不生效**，这一步是硬性等待。
+5. 付款后进入 [域名控制台 · 域名列表](https://dc.console.aliyun.com/#/domain-list/all?type=)，等域名状态变成「**已实名**」（一般几分钟到几小时）。**没实名成功之前，后面的解析都不生效**，这一步是硬性等待。
 
 ## 第 2 步：Cloudflare 接管域名解析（10 分钟）
 
@@ -52,7 +109,10 @@ pinned: true
 
 ![Cloudflare 添加站点：爬虫策略保持 Allow](images/05-cf-add-site.png)
 
-4. **关键一步**：Cloudflare 会自动扫出你域名下的记录。确认有这 8 条 A 记录，**每条都要点成灰色「DNS only」**：
+4. **关键一步**：Cloudflare 会自动扫出你域名下的记录，确认有这 8 条 A 记录：
+
+> [!IMPORTANT]
+> 每条记录的代理状态都必须点成灰色「**DNS only**」。橙色的「Proxied」会让访客看到的 IP 变成 Cloudflare 的，GitHub 的证书签发和域名解析都会跟着乱。
 
 ![初始导入状态是橙色「Proxied」，必须逐条点成灰色](images/06-cf-records-orange.png)
 
@@ -82,12 +142,15 @@ dawn.ns.cloudflare.com
 
 ## 第 3 步：回阿里云，把 DNS 服务器换成 Cloudflare 的（5 分钟）
 
-1. 打开 [dc.console.aliyun.com](https://dc.console.aliyun.com)（注意是 **dc** 开头的域名控制台，不是解析控制的 dns 开头——我第一次就进错页面了）：
+1. 打开[域名控制台的域名列表页](https://dc.console.aliyun.com/#/domain-list/all?type=)（注意是 **dc** 开头的域名控制台，不是解析控制的 dns 开头——我第一次就进错页面了）：
 
-![这是错误的页面：dns.console.aliyun.com 是管解析记录的，不是改 NS 的](images/08-wrong-console.png)
+![正确的页面：域名列表，点域名右侧的「管理」](images/14-domain-list.png)
 
-2. 域名列表 → 你的域名 → 「管理」→ 左侧「**DNS 修改**」→「修改 DNS 服务器」
-3. 把原来的 `dns21.hichina.com`、`dns22.hichina.com` **替换**成 Cloudflare 给的那 2 个地址 → 保存（可能要手机验证码）
+2. 点域名右侧的「**管理**」，进入域名详情页：
+
+![域名详情页：点 DNS 服务器旁的「修改DNS」按钮](images/15-dns-modify.png)
+
+3. 点「**修改DNS**」→ 把原来的 `dns21.hichina.com`、`dns22.hichina.com` **替换**成 Cloudflare 给的那 2 个地址 → 保存（可能要手机验证码）
 
 生效需要几分钟到几小时（.cn 注册局要更新记录）。期间 Cloudflare 首页的站点状态会从 Pending 变成 **Active**，看到 Active 就成了。
 
@@ -135,10 +198,16 @@ Bing 更简单：[bing.com/webmasters](https://www.bing.com/webmasters) → 登�
 | GSC 报「站点地图地址无效」 | Google 的 DNS 负缓存还没过期 | 用「网址检查→请求编入索引」绕行，隔天重试 |
 | 买完域名解析不生效 | 实名认证还没通过 | 域名控制台等状态变「已实名」 |
 
+## 彩蛋：招牌换完，要不要精装修？
+
+到这里，你的摊位已经有自己独立的招牌了。但它大概率还是个「毛坯房」——一个孤零零的 `index.html`。
+
+想住得精致，其实**不需要自己一砖一瓦**：有一套开源免费的现成精装修方案 **Fuwari**（基于建站工具 Astro 的博客主题），分类、标签、站内搜索、暗色模式一应俱全——你现在看到的这个博客，就是用它搭的。
+
 ## 之后的日常
 
 写文章就是：在 `src/content/posts/` 下建一个 Markdown 文件 → `git push` → 自动发布。前几篇可以顺手在 GSC「网址检查」里提交一下新文章网址，几周后网站有了信誉，Google 会自动来抓，连这步都省了。
 
 ---
 
-*本文由 AI（GLM-5.3-Flash）生成，未经人工审阅*
+*本文由 AI（GLM-5.3-Flash）生成 + 人工审阅*
