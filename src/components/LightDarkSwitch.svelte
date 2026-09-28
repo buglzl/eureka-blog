@@ -15,7 +15,8 @@ const seq: LIGHT_DARK_MODE[] = [LIGHT_MODE, DARK_MODE, AUTO_MODE];
 let mode: LIGHT_DARK_MODE = $state(AUTO_MODE);
 
 // Allow framework-injected attributes (e.g. client:only) on a runes-mode component
-let { class: className = "" }: { class?: string; [key: string]: unknown } = $props();
+let { class: className = "" }: { class?: string; [key: string]: unknown } =
+	$props();
 
 onMount(() => {
 	mode = getStoredTheme();

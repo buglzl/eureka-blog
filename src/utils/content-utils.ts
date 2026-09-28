@@ -4,7 +4,10 @@ import { i18n } from "@i18n/translation";
 import { getCategoryUrl } from "@utils/url-utils.ts";
 import { postCardConfig } from "@/config";
 
-function comparePosts(a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) {
+function comparePosts(
+	a: CollectionEntry<"posts">,
+	b: CollectionEntry<"posts">,
+) {
 	if (a.data.pinned !== b.data.pinned) {
 		return a.data.pinned ? -1 : 1;
 	}
