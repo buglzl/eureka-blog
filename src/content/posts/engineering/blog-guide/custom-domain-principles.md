@@ -16,7 +16,7 @@ draft: true
 
 **这一章回答：为什么「解析」是一切的第一环。**
 
-一句话：**DNS（Domain Name System，域名系统）解析，本质上就是查域名（`lzleureka.cn`）对应的 IP（Internet Protocol，网际协议）地址。**
+一句话：**DNS（Domain Name System，域名系统）解析，本质上就是把域名翻译成它对应的记录——对我们最要紧的，是查出 `lzleureka.cn` 的 IP（Internet Protocol，网际协议）地址。**
 
 浏览器不认识域名，只认 IP。完整的解析查询按顺序经过：
 
