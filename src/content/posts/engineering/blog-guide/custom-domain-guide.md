@@ -196,6 +196,7 @@ Bing 更简单：[bing.com/webmasters](https://www.bing.com/webmasters) → 登�
 | HTTPS 一直不签发 | DNS 检查没通过，或者记录是橙色云 | 确认灰云 DNS only；确认 NS 已切到 Cloudflare |
 | 域名打不开，但配置都对 | 解析缓存没过期，国内最长 6 小时 | 等，或换网络/设备再试 |
 | GSC 报「站点地图地址无效」 | Google 的 DNS 负缓存还没过期 | 用「网址检查→请求编入索引」绕行，隔天重试 |
+| GSC 资源报告提示被 robots.txt 拦截（/_astro/...） | Fuwari 模板默认禁止爬虫抓取构建资源，会让页面渲染不完整、图片进不了谷歌图片 | 删掉 `src/pages/robots.txt.ts` 里的 `Disallow: /_astro/` 那一行 |
 | 买完域名解析不生效 | 实名认证还没通过 | 域名控制台等状态变「已实名」 |
 
 ## 彩蛋：招牌换完，要不要精装修？

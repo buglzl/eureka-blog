@@ -3,7 +3,6 @@ import { url } from "../utils/url-utils";
 
 const robotsTxt = `
 User-agent: *
-Disallow: /_astro/
 
 Sitemap: ${new URL(url("sitemap-index.xml"), import.meta.env.SITE).href}
 `.trim();
