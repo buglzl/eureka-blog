@@ -57,8 +57,10 @@ export async function getSortedPostsList(): Promise<PostForList[]> {
 }
 
 export function isRecentPost(published: Date): boolean {
-	const ageInDays = (Date.now() - published.getTime()) / 86400000;
-	return ageInDays >= 0 && ageInDays < postCardConfig.newBadgeDays;
+	// Clamp to 0: a post dated "today" (or slightly ahead in UTC terms, e.g. the
+	// author lives in UTC+8) must still count as new at build time.
+	const ageInDays = Math.max(0, (Date.now() - published.getTime()) / 86400000);
+	return ageInDays < postCardConfig.newBadgeDays;
 }
 export type Tag = {
 	name: string;
