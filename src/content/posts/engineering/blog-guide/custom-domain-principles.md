@@ -16,7 +16,9 @@ draft: true
 
 **这一章回答：为什么「解析」是一切的第一环。**
 
-浏览器不认识 `lzleureka.cn`，只认 IP（Internet Protocol，网际协议）地址。一次完整的 DNS（Domain Name System，域名系统）解析查询按顺序经过：
+一句话：**DNS（Domain Name System，域名系统）解析，本质上就是查域名（`lzleureka.cn`）对应的 IP（Internet Protocol，网际协议）地址。**
+
+浏览器不认识域名，只认 IP。完整的解析查询按顺序经过：
 
 1. 浏览器缓存、操作系统缓存 → 命中即返回
 2. 递归解析器（运营商 DNS 或公共 DNS，如 `223.5.5.5`）→ 命中即返回
