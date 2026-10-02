@@ -134,13 +134,16 @@ DNS 这一环修好后，链条的下一环——HTTPS 证书——才轮到出�
 
 **这一章回答：为什么 DNS 慢会导致证书永远签不出来。**
 
-HTTPS（HyperText Transfer Protocol Secure，安全的超文本传输协议）的信任基础，是一张由 CA（Certificate Authority，证书颁发机构）签发的证书。Let's Encrypt 作为免费的公益性 CA，签发前必须验证申请者对域名的控制权——方式之一就是回查该域名的 DNS 记录，确认解析指向的确实是申请者的服务器。整条链路：
+HTTPS（HyperText Transfer Protocol Secure，安全的超文本传输协议）的信任基础，是一张由 CA（Certificate Authority，证书颁发机构）签发的证书。Let's Encrypt 作为免费的公益性 CA，签发前必须验证申请者对域名的控制权。
 
-```
-DNS 检查（限时） → 签发证书 → 部署到边缘节点 → HTTPS 可用
-```
+在我们的链路里，这个验证是**两道关卡**：
 
-于是第二章的 2 秒超时在这里产生级联后果：检查失败 → 证书申请被拒 → HTTPS 永远不可用。我们实测：迁移 Cloudflare 后检查一次通过，证书几分钟内自动签发。
+1. **GitHub 的 DNS 检查**（Settings → Pages 那个绿勾）：确认域名解析到了 GitHub 的服务器——这是 GitHub 敢把你的域名挂到自己机器上的前提
+2. **Let's Encrypt 的域名验证**：GitHub 代你向 Let's Encrypt 申请证书，Let's Encrypt 会**访问这个域名**验证控制权（从 GitHub 的服务器上取一个验证文件）——前提同样是「域名解析到了 GitHub」
+
+两道关卡共用同一个前提：**域名必须能被快速、正确地解析**。于是第二章的 2 秒超时在这里产生级联后果：检查失败 → 证书申请被拒 → HTTPS 永远不可用。我们实测：迁移 Cloudflare 后检查一次通过，证书几分钟内自动签发。
+
+> 两个安心点：Let's Encrypt 的证书有效期只有 90 天，但 GitHub 会**自动续期**——一次配置，终身免维护；`lzleureka.cn` 和 `www.lzleureka.cn` 会签在同一张证书里，不用分开操心。
 
 另一个常见疑问：**为什么这套方案不需要 ICP（Internet Content Provider，互联网内容提供商）备案？** 备案是「网站服务器位于中国大陆」时的行政要求；GitHub Pages 的服务器在境外，不进入这个监管范围。只有将来把站点迁回国内服务器或使用国内 CDN 时，备案才是前置条件。
 
