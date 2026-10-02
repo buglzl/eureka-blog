@@ -138,10 +138,20 @@ HTTPS（HyperText Transfer Protocol Secure，安全的超文本传输协议）�
 
 在我们的链路里，这个验证是**两道关卡**：
 
-1. **GitHub 的 DNS 检查**（Settings → Pages 那个绿勾）：确认域名解析到了 GitHub 的服务器——这是 GitHub 敢把你的域名挂到自己机器上的前提
-2. **Let's Encrypt 的域名验证**：GitHub 代你向 Let's Encrypt 申请证书，Let's Encrypt 会**访问这个域名**验证控制权（从 GitHub 的服务器上取一个验证文件）——前提同样是「域名解析到了 GitHub」
+**关卡一：GitHub 的 DNS 检查**（Settings → Pages 那个绿勾）
 
-两道关卡共用同一个前提：**域名必须能被快速、正确地解析**。于是第二章的 2 秒超时在这里产生级联后果：检查失败 → 证书申请被拒 → HTTPS 永远不可用。我们实测：迁移 Cloudflare 后检查一次通过，证书几分钟内自动签发。
+GitHub 确认「这个域名解析到了我们的服务器」——这是它敢把你的域名挂到自己机器上的前提。
+
+**关卡二：Let's Encrypt 的对暗号验证**
+
+GitHub 代你向 Let's Encrypt 申请证书。Let's Encrypt 的验证方式是一个「对暗号」游戏：
+
+1. Let's Encrypt 生成一个一次性随机码，要求把它放到 `http://lzleureka.cn/.well-known/acme-challenge/随机码` 这个网址下
+2. GitHub 把随机码文件挂到自己服务器上
+3. Let's Encrypt **亲自访问这个网址**——读到的暗号和它生成的一致，就证明「这个域名的控制权确实在申请者手里」
+4. 验证通过 → 证书签发
+
+两道关卡共用同一个死穴：**每一步访问都要先经过 DNS 解析**。解析超时或指错了人，检查和「对暗号」全部扑空。于是第二章的 2 秒超时在这里产生级联后果：检查失败 → 证书申请被拒 → HTTPS 永远不可用。我们实测：迁移 Cloudflare 后检查一次通过，证书几分钟内自动签发。
 
 > 两个安心点：Let's Encrypt 的证书有效期只有 90 天，但 GitHub 会**自动续期**——一次配置，终身免维护；`lzleureka.cn` 和 `www.lzleureka.cn` 会签在同一张证书里，不用分开操心。
 
