@@ -1,11 +1,11 @@
 ---
 title: 给 GitHub Pages 挂上自定义域名：全链路原理拆解
-published: 2026-09-30
+published: 2026-10-02
 description: 为什么 GitHub 签不出 HTTPS 证书？为什么换 Cloudflare 就好了？爬虫怎么找到你的网站？本文记录迁移全程的机制分析与实测数据。
 image: '../../images/blog-guide-2.webp'
 tags: [DNS, Cloudflare, HTTPS, 计算机网络, 博客, 原理]
 category: '工程'
-draft: true
+draft: false
 ---
 
 > **一句话结论：让一个博客被全世界访问、被搜索引擎搜到，本质上只依赖三件事——① 域名解析要足够快；② HTTPS 证书要能签出来；③ 内容要能被爬虫发现。我踩的每一个坑，都是这三件事之一出了问题。**
@@ -194,7 +194,8 @@ GitHub Pages 场景用灰云最省心：证书签发和域名检查都依赖「A
 | A 记录 | 域名 → IPv4 地址 |
 | CNAME | 域名 → 另一个域名（别名） |
 | TTL | 应答被缓存的秒数 |
-| 任播（Anycast) | 同一 IP 宣告到全球多机房，路由就近分发 |
+| 任播（Anycast） | 同一 IP 宣告到全球多机房，路由就近分发 |
+| GSC | Google Search Console，谷歌搜索控制台（提交收录、检查抓取的站长后台） |
 | CDN | 内容分发网络，边缘节点缓存站点内容 |
 | HTTPS / TLS | 客户端与服务器间的加密通信 |
 | 证书 | 服务器身份证明，由 CA 签发 |
@@ -213,4 +214,4 @@ GitHub Pages 场景用灰云最省心：证书签发和域名检查都依赖「A
 
 ---
 
-*本文由 AI（GLM-5.3-Flash）生成，未经人工审阅*
+*本文由 AI（GLM-5.3-Flash）生成 + 人工审阅*
