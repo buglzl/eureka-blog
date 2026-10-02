@@ -155,7 +155,7 @@ GitHub 代你向 Let's Encrypt 申请证书。Let's Encrypt 的验证方式是�
 
 > 两个安心点：Let's Encrypt 的证书有效期只有 90 天，但 GitHub 会**自动续期**——一次配置，终身免维护；`lzleureka.cn` 和 `www.lzleureka.cn` 会签在同一张证书里，不用分开操心。
 
-另一个常见疑问：**为什么这套方案不需要 ICP（Internet Content Provider，互联网内容提供商）备案？** 备案是「网站服务器位于中国大陆」时的行政要求；GitHub Pages 的服务器在境外，不进入这个监管范围。只有将来把站点迁回国内服务器或使用国内 CDN 时，备案才是前置条件。
+另一个常见疑问：**为什么这套方案不需要 ICP（Internet Content Provider，互联网内容提供商）备案？** 备案是「网站服务器位于中国大陆」时的行政要求；GitHub Pages 的服务器在境外，不进入这个监管范围。只有将来把站点迁回国内服务器或使用国内 CDN（Content Delivery Network，内容分发网络）时，备案才是前置条件。
 
 ## 四、橙云与灰云：Cloudflare 的两种角色
 
@@ -164,7 +164,7 @@ Cloudflare 的每条 DNS 记录带一个代理开关：
 - **橙云（Proxied）**：流量先进 Cloudflare 边缘网络（CDN〔Content Delivery Network，内容分发网络〕缓存、WAF〔Web Application Firewall，Web 应用防火墙〕、隐藏源站 IP），再回源到真实服务器。访客看到的 A 记录值是 Cloudflare 的 IP
 - **灰云（DNS only）**：Cloudflare 只承担权威解析，应答真实 IP，流量不经过它
 
-GitHub Pages 场景必须用灰云：证书签发和域名检查都依赖「A 记录指向 GitHub 的固定 IP（`185.199.108-111.153`）」这一事实。橙云会把记录值替换成 Cloudflare 的 IP，GitHub 的验证对象随之失效。**规则很简单：只需要「名字指对」就用灰云；需要 CDN 的缓存与防护才开橙云。**
+GitHub Pages 场景用灰云最省心：证书签发和域名检查都依赖「A 记录指向 GitHub 的固定 IP（`185.199.108-111.153`）」这一事实。橙云会把记录值替换成 Cloudflare 的 IP，验证对象随之失效；橙云并非绝对不可行，但需要额外配置 Cloudflare 边缘证书和 SSL 模式，对个人博客是不必要的复杂度。**规则很简单：只需要「名字指对」就用灰云；需要 CDN 的缓存与防护才开橙云。**
 
 ## 五、搜索引擎是怎么看到你的网站的？
 
