@@ -7,6 +7,9 @@ dist/
 # dependencies
 node_modules/
 
+# local production projects and intermediate artifacts
+/.local/
+
 # logs
 npm-debug.log*
 yarn-debug.log*

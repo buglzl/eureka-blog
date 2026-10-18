@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<title id="title">Agent Harness：从模型调用到任务交付</title>
+<desc id="desc">上下文进入模型，模型请求工具，工具在环境中执行并回传结果；生命周期组织循环，可观测性、验证与治理贯穿任务。</desc>
+<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#cbd5dd"/></pattern><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9" fill="none" stroke="#40566b" stroke-width="1.5"/></marker></defs>
+<rect width="1200" height="680" rx="28" fill="#f9faf4"/><rect width="1200" height="680" rx="28" fill="url(#grid)" opacity=".6"/><circle cx="1100" cy="74" r="110" fill="#ffddb1" opacity=".6"/><circle cx="35" cy="620" r="140" fill="#c6ebdf" opacity=".6"/>
+<g font-family="Microsoft YaHei, PingFang SC, sans-serif" fill="#20384d">
+<text x="64" y="68" font-size="16" letter-spacing="3" fill="#52728b">AGENT HARNESS ENGINEERING · 00</text>
+<text x="64" y="132" font-size="43" font-weight="700">从一次模型调用，到一项任务完成</text>
+<text x="66" y="173" font-size="21" fill="#52728b">七层职责，沿着执行过程逐步看清</text>
+<rect x="58" y="211" width="1084" height="293" rx="24" fill="#fff" stroke="#a9c2d3" stroke-width="2"/>
+<rect x="82" y="231" width="344" height="40" rx="12" fill="#e7e6fb"/><text x="103" y="258" font-size="18" font-weight="700">L · 生命周期：继续、重试、停止</text>
+<g stroke="#40566b" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M304 350 H343"/><path d="M550 350 H590"/><path d="M796 350 H836"/><path d="M964 402 V459 H207 V402"/></g>
+<rect x="98" y="300" width="206" height="102" rx="18" fill="#d7edf9"/><text x="201" y="340" text-anchor="middle" font-size="23" font-weight="700">C · 上下文</text><text x="201" y="374" text-anchor="middle" font-size="17">要求、文件、历史结果</text>
+<rect x="344" y="300" width="206" height="102" rx="18" fill="#ffe2a9"/><text x="447" y="340" text-anchor="middle" font-size="24" font-weight="700">模型</text><text x="447" y="374" text-anchor="middle" font-size="17">生成下一步请求</text>
+<rect x="590" y="300" width="206" height="102" rx="18" fill="#d9eddd"/><text x="693" y="340" text-anchor="middle" font-size="23" font-weight="700">T · 工具接口</text><text x="693" y="374" text-anchor="middle" font-size="17">参数与操作的交接</text>
+<rect x="836" y="300" width="266" height="102" rx="18" fill="#f9ddd8"/><text x="969" y="340" text-anchor="middle" font-size="23" font-weight="700">E · 执行环境</text><text x="969" y="374" text-anchor="middle" font-size="17">读写文件、运行代码</text>
+<rect x="442" y="442" width="315" height="33" rx="10" fill="#fff"/><text x="600" y="466" text-anchor="middle" font-size="18" fill="#52728b">执行结果 → 下一轮输入</text>
+<rect x="58" y="531" width="344" height="90" rx="18" fill="#d7edf9"/><text x="82" y="566" font-size="21" font-weight="700">O · 可观测性</text><text x="82" y="598" font-size="18">记录发生了什么</text>
+<rect x="428" y="531" width="344" height="90" rx="18" fill="#e7e6fb"/><text x="452" y="566" font-size="21" font-weight="700">V · 验证</text><text x="452" y="598" font-size="18">检查是否达到要求</text>
+<rect x="798" y="531" width="344" height="90" rx="18" fill="#ffe2a9"/><text x="822" y="566" font-size="21" font-weight="700">G · 治理</text><text x="822" y="598" font-size="18">约束哪些操作可以发生</text>
+<text x="600" y="654" text-anchor="middle" font-size="16" fill="#52728b">职责示意：O、V、G 可介入多个执行环节，七层之间存在交接与反馈。</text>
+</g></svg>
