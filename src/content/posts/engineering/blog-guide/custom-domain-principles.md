@@ -2,7 +2,7 @@
 title: 给 GitHub Pages 挂上自定义域名：全链路原理拆解
 published: 2026-10-02
 description: 为什么 GitHub 签不出 HTTPS 证书？为什么换 Cloudflare 就好了？爬虫怎么找到你的网站？本文记录迁移全程的机制分析与实测数据。
-image: '../../images/blog-guide-2.webp'
+image: '../../images/blog-guide-2-v2.webp'
 tags: [DNS, Cloudflare, HTTPS, 计算机网络, 博客, 原理]
 category: '工程'
 draft: false
