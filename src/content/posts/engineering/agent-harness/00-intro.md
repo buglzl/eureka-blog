@@ -7,6 +7,7 @@ image: '../../images/agent-harness-overview.svg'
 tags: [AI, Agent, LLM, Harness]
 category: '工程'
 draft: false
+pinned: true
 ---
 
 让 AI 修复一个函数，它找到了错误，也写出了合理的修改，工具却返回：“要替换的文本未找到。”原因可能只是旧代码里的一处缩进没有对齐。接下来几轮，它反复尝试同一次编辑，代码始终没有改成。
