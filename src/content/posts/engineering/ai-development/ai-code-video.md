@@ -13,8 +13,8 @@ draft: false
 先看本文的配套视频。它与文章讲述同一条制作链，结尾会回到它自己的制作过程。
 
 <video controls playsinline preload="metadata" poster="/videos/ai-code-video/poster.webp" style="width:100%;aspect-ratio:16/9;border-radius:16px;background:#071320" aria-label="让 AI 用代码做视频，本文配套讲解视频">
-  <source src="/videos/ai-code-video/ai-code-video.mp4?v=7" type="video/mp4" />
-  你的浏览器不支持视频播放，可以<a href="/videos/ai-code-video/ai-code-video.mp4?v=7">下载成片</a>。
+  <source src="https://media.lzleureka.cn/ai-code-video.mp4?v=7" type="video/mp4" />
+  你的浏览器不支持视频播放，可以<a href="https://media.lzleureka.cn/ai-code-video.mp4?v=7">下载成片</a>。
 </video>
 
 ## 一、先决定让 AI 承担哪部分工作
